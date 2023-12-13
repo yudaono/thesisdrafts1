@@ -1,0 +1,49 @@
+\documentclass[12pt, a4paper]{report}
+\renewcommand{\baselinestretch}{2.0}
+
+\input{Controller/module.tex}
+\input{Controller/style.tex}
+
+\def\draftTitle{Efek Laser Merah dan Hijau Pada Hasil Pengukuran Partikel Berbasis Dynamic Light Scattering}
+\def\fullName{Mohamad Fauzi}
+\def\NPM{140310190053}
+\def\dateOf{Desember 2023}
+\def\laboratory{Instrumentasi}
+\def\supervisorNameF{Ferry Faizal, Ph.D}
+\def\NIPF{1234567 123456 1 123}
+\def\supervisorNameS{Prof. Dr. Eng. I Made Joni, M.Sc}
+\def\NIPS{1234567 123456 1 123}
+\def\directorName{Prof. Dr. Eng. Camellia Panatarani, M.Si}
+\def\NIPS{1234567 123456 1 123}
+
+\title{major}
+\author{\fullName}
+\date{December 2023}
+
+\begin{document}
+    \newgeometry{a4paper,top=4cm,bottom=3cm,left=4cm,right=3cm}
+
+    \input{Pages/Head/cover.tex}
+    \input{Pages/Head/cover_bw.tex}
+    \input{Pages/Head/legal.tex}
+
+    \setstretch{2}
+    \input{Pages/Head/prologue.tex}
+    \input{Pages/Head/abstrak.tex}
+    \input{Pages/Head/abstract.tex}
+    \input{Pages/Head/l_contents.tex}
+    \input{Pages/Head/l_images.tex}
+    % \input{Header/d_tabel}
+
+    \input{Pages/Content/Pendahuluan.tex}
+    \input{Pages/Content/Tinjauan Pustaka.tex}
+    % \input{Isi/Metode Penelitian}
+    % \input{Isi/Hasil dan Pembahasan}
+    % \input{Isi/Kesimpulan dan Saran}
+
+    \bibliographystyle{ieeetr}
+    \bibliography{ref}
+    \addcontentsline{toc}{chapter}{DAFTAR PUSTAKA}
+
+    % \input{Isi/Lampiran}
+\end{document}

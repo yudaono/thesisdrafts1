@@ -1,0 +1,11 @@
+draft-blx.bib
+*.blg
+*.aux
+*.bbl
+*.toc
+*.out
+*.log
+*.lof
+*.fls
+*.fdb_latexmk
+*.gz
