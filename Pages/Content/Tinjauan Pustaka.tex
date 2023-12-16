@@ -58,9 +58,67 @@ dideteksi. Akibat adanya fluktuasi tersebut, nilai yang didapatkan dari detektor
 seiring waktu. Oleh karena itu pada DLS pengukuran berdasarkan dari nilai distribusi dari gerak
 Brownian\cite{Falke2019,Pavan2022}. 
 
+
+
 % Autocorelation Function
+\section{Autokorelasi}
 
 % AutoCorelation Function
+
+
+
+\section{Fotodioda}
+Pada umumnya, sensor merupakan perangkat yang merubah stimulus yang masuk ke dalam sensor menjadi
+suatu sinyal dalam bentuk arus. Sensor cahaya berdasarkan perubahan elektrik yang dihasilkan dibagi
+menjadi dua jenis, yaitu fotovoltaik dan fotokonduktif. Salah satu sensor cahaya jenis fotokonduktif
+adalah sensor fotodioda. Sensor fotodioda dapat merespon stimulus berupa cahaya tampak maupun tidak
+tampak dan mengkonversi intensitas cahaya yang terdeteksi menjadi arus\cite{Setyaningsih2017}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{Images/Fotodioda.png}
+    \caption{Lambang dan Gambar Fotodioda LED Inframerah}
+    \label{fig:led photodiode}
+\end{figure}
+
+Fotodioda adalah suatu jenis dioda yang resistansinya akan berubah-ubah apabila terkena sinar
+cahaya. Resistansi dari fotodioda dipengaruhi oleh intensitas cahaya yang diterimanya, semakin
+banyak cahaya yang diterima maka semakin kecil resistansi dari fotodioda dan begitupula sebaliknya
+jika semakin sedikit intensitas cahaya yang diterima oleh sensor fotodioda maka semakin besar nilai
+resistansinya\cite{Setyaningsih2017,Arta2020}.
+
+Pada fotodioda, terdapat bahan semikonduktor seperti \textit{silicon} (Si) atau \textit{gallium
+arsenide} (GaAs) dan lain lain seperti \textit{indium antimonide} (InSb), \textit{lead selenide}
+(PbSe) dan \textit{timah sulfida} (PbS). Fotodioda memiliki lapisan substrat dengan area depletion
+sebagai tempat masuknya foton. Pada saat foton masuk ke area depletion, elektron pada N-substrat
+akan bergerak membuat pasangan lubang-elektron pada katoda sehingga terjadi arus listrik pada
+rangkaian fotodioda\cite{Vlasov2023}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{Images/Bias Fotodioda.png}
+    \caption{P-N Fotodioda}
+    \label{fig:p-n photodiode}
+\end{figure}
+
+
+
+\section{OPT101}
+
+Pada prinsipnya fotodioda menghasilkan arus proporsional dari cahaya yang mengenai area aktif dari
+fotodioda. Kebanyakan aplikasi dari pengukuran sensor ini menggunakan transimpedance amplifier
+untuk mengkonversi nilai arus menjadi keluaran voltase. Adanya amplifier tersebut dapat
+mengoperasikan fotodioda dalam mode \textit{photovoltaic} dimana op amp akan membuat voltase di
+sekitar fotodioda pada 0V. Sebagai contoh terdapat pada OPT101 yang digunakan pada percobaan kali
+ini.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=5cm]{Images/OPT101.jpg}
+    \caption{Fotodioda dengan \textit{Transimpedance Amplifier} OPT101}
+    \label{fig:opt101}
+\end{figure}
+
 
 
 \section{Mikrokontroler}
@@ -99,55 +157,6 @@ dari Arduino Uno R3 sendiri yaitu:
     \includegraphics{Images/ArduinoUno.jpg}
     \caption{Board Arduino Uno R3}
     \label{fig:arduino}
-\end{figure}
-
-
-
-\section{Fotodioda}
-Pada umumnya, sensor merupakan perangkat yang merubah stimulus yang masuk ke dalam sensor menjadi
-suatu sinyal dalam bentuk arus. Sensor cahaya berdasarkan perubahan elektrik yang dihasilkan dibagi
-menjadi dua jenis, yaitu fotovoltaik dan fotokonduktif. Salah satu sensor cahaya jenis fotokonduktif
-adalah sensor fotodioda. Sensor fotodioda dapat merespon stimulus berupa cahaya tampak maupun tidak
-tampak dan mengkonversi intensitas cahaya yang terdeteksi menjadi arus\cite{Setyaningsih2017}.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics{Images/Fotodioda.png}
-    \caption{Lambang dan Gambar Fotodioda LED Inframerah}
-    \label{fig:led photodiode}
-\end{figure}
-
-Fotodioda adalah suatu jenis dioda yang resistansinya akan berubah-ubah apabila terkena sinar
-cahaya. Resistansi dari fotodioda dipengaruhi oleh intensitas cahaya yang diterimanya, semakin
-banyak cahaya yang diterima maka semakin kecil resistansi dari fotodioda dan begitupula sebaliknya
-jika semakin sedikit intensitas cahaya yang diterima oleh sensor fotodioda maka semakin besar nilai
-resistansinya\cite{Setyaningsih2017,Arta2020}.
-
-Pada fotodioda, terdapat bahan semikonduktor seperti \textit{silicon} (Si) atau \textit{gallium
-arsenide} (GaAs) dan lain lain seperti \textit{indium antimonide} (InSb), \textit{lead selenide}
-(PbSe) dan \textit{timah sulfida} (PbS). Fotodioda memiliki lapisan substrat dengan area depletion
-sebagai tempat masuknya foton. Pada saat foton masuk ke area depletion, elektron pada N-substrat
-akan bergerak membuat hole pada katoda sehingga terjadi arus listrik pada rangkaian fotodioda.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics{Images/Bias Fotodioda.png}
-    \caption{P-N Fotodioda}
-    \label{fig:p-n photodiode}
-\end{figure}
-
-Pada prinsipnya fotodioda menghasilkan arus proporsional dari cahaya yang mengenai area aktif dari
-fotodioda. Kebanyakan aplikasi dari pengukuran sensor ini menggunakan transimpedance amplifier
-untuk mengkonversi nilai arus menjadi keluaran voltase. Adanya amplifier tersebut dapat
-mengoperasikan fotodioda dalam mode \textit{photovoltaic} dimana op amp akan membuat voltase di
-sekitar fotodioda pada 0V. Sebagai contoh terdapat pada OPT101 yang digunakan pada percobaan kali
-ini.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=5cm]{Images/OPT101.jpg}
-    \caption{Fotodioda dengan \textit{Transimpedance Amplifier} OPT101}
-    \label{fig:opt101}
 \end{figure}
 
 
