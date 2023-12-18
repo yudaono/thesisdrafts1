@@ -49,7 +49,7 @@ dengan gerak Brown. Pada gerak brown, digunakan persamaan \textit{Stokes-Einstei
 menghubungkan gerak Brownian dengan ukuran dari partikel\cite{Anindya2018}. Persamaan dari
 \textit{Stokes-Einstein} dapat dituliskan sebagai berikut.
 \begin{equation}
-    D = \frac{k_b T}{6 \pi \eta R}
+    D_{\tau} = \frac{k_b T}{6 \pi \eta R}
 \end{equation}
 
 Dalam hamburan cahaya, ketika laser mengenai molekul, cahaya yang terhamburkan akan menyebar ke
@@ -67,7 +67,7 @@ yang seringkali digunakan yaitu fungsi medan elektromagnetik ${g_1 (\tau)}$ atau
 didefinisikan dengan persamaan:
 
 \begin{equation}
-    g_1 (\tau) = \frac{\langle E(t)* E(t+\tau)\rangle}{\langle E(t)\rangle^2}
+    g_1 (\tau) = \frac{\langle E(t) E(t+\tau)\rangle}{\langle E(t)\rangle^2}
 \end{equation}
 
 Dalam kondisi ini, dipertimbangkan kondisi stasioner sehingga ketergantungan terhadap waktu
@@ -81,23 +81,60 @@ correlation function} yang dapat ditulis:
 \begin{equation}
     g_2 (\tau) = \frac{\langle I(t) I(t+\tau)\rangle}{\langle I(t)\rangle^2}
 \end{equation}
+% \noindent
+% Jika pada penurunan persamaan, nilai dari ${I(t) = E(t) E(t)}$, maka ${g_2(\tau)}$ menjadi:
+% \begin{equation}
+%     g_2 (\tau) = \frac{1}{\langle I(t)\rangle^2} \langle \Sigma E(t) E(t) \cdot \Sigma E(t+\tau) E(t+\tau) \rangle
+% \end{equation}
+% \noindent
+% Karena partikel bergerak menyebar, maka terdapat nilai variabel hamburan sendiri sehingga
+% nilai dari ${g_2(\tau)}$ adalah:
 
-Jika pada penurunan persamaan, nilai dari ${I(t) = E(t)* E(t)}$, maka ${g_2(\tau)}$ menjadi:
+% \begin{equation}
+%     g_2 (\tau) = \frac{1}{\langle I(t)\rangle^2} \lceil \langle I(t)^2 \rangle + \langle I(t)^2 \rangle \cdot |g_1(\tau)|^2
+% \end{equation}
+% \noindent
+% maka:
+
+Fungsi dari ${g_1(\tau) dan g_2(\tau)}$ dapat dihubungkan dengan \textit{Siegert Relation}
+berdasarkan aproksimasi hamburan bersifat homodyne(Fotodetektor hanya mendeteksi cahaya
+yang tersebar) \cite{Stetefeld2016}. Berdasarkan kondisi tersebut, maka persamaan
+${g_2(\tau)}$ menjadi:
 \begin{equation}
-    g_2 (\tau) = \frac{1}{\langle I(t)\rangle^2} \langle \Sigma E(t)* E(t) \cdot \Sigma E(t+\tau)* E(t+\tau) \rangle
+    g_2(\tau) = B + \beta|g_1(\tau)|^2
+\end{equation}
+\noindent
+dimana ${B}$ merupakan baseline (${\thicksim}$1) dan ${\beta}$ adalah konstanta eksperimental empiris.
+Untuk monodispersi partikel, faktor korelasi medan magnet ${g_1(\tau)}$ meluruh secara
+eksponensial bergantung pada konstanta peluruhan ${\Gamma}$ untuk molekul pada gerak
+\textit{Brownian}.
+\begin{equation}
+    g_1(\tau)=e^{-\Gamma \tau}
+    \label{eq:g1tau}
 \end{equation}
 
-Karena partikel bergerak menyebar, maka terdapat nilai variabel hamburan sendiri sehingga
-nilai dari ${g_2(\tau)}$ adalah:
-
+\noindent
+Maka persamaan ~\ref{eq:g1tau} menjadi
 \begin{equation}
-    g_2 (\tau) = \frac{1}{\langle I(t)\rangle^2} \lceil \langle I(t)^2 \rangle + \langle I(t)^2 \rangle \cdot |g_1(\tau)|^2
+    g_2(\tau) = B + \beta g_1(\tau)^{-2\Gamma \tau}
 \end{equation}
 
-maka:
+Konstanta peluruhan pada persamaan ~\ref{eq:g1tau} berhubungan langsung pada koefisien difusi
+makromolekul (${D_{\tau}}$) yang dituliskan dalam persamaan.
 \begin{equation}
-    g_2(\tau) = 1+|g_1(\tau)|^2
+    \Gamma = -D_{\tau} q^2
+    \label{eq:difusimakro}
 \end{equation}
+\noindent
+Pada persamaan ~\ref{eq:difusimakro} \textit{Bragg Wave Vector} (${q}$) akan proporsional pada
+medium hamburan (${n}$).
+\begin{equation}
+    q = \frac{4\pi \eta}{\lambda} \sin (\theta / 2)
+\end{equation}
+\noindent
+dimana ${\lambda}$ merupakan panjang gelombang dari cahaya dan ${\theta}$ adalah sudut dimana
+detektor diletakan.
+
 
 
 
