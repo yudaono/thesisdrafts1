@@ -60,6 +60,44 @@ dideteksi. Akibat adanya fluktuasi tersebut, nilai yang didapatkan dari detektor
 seiring waktu. Oleh karena itu pada DLS pengukuran berdasarkan dari nilai distribusi dari gerak
 Brownian\cite{Falke2019,Pavan2022}. 
 
+Pada umumnya perubahan intensitas terhadap waktu akan memperngaruhi akurasi dari pengukuran DLS,
+oleh karena itu terdapat \textit{Auto Corelation Function} yang menghitung rata-rata nilai
+fluktuasi gerak partikel. Dalam \textit{Corelation Function} orde pertama di antara besaran
+yang seringkali digunakan yaitu fungsi medan elektromagnetik ${g_1 (\tau)}$ atau dapat
+didefinisikan dengan persamaan:
+
+\begin{equation}
+    g_1 (\tau) = \frac{\langle E(t)* E(t+\tau)\rangle}{\langle E(t)\rangle^2}
+\end{equation}
+
+Dalam kondisi ini, dipertimbangkan kondisi stasioner sehingga ketergantungan terhadap waktu
+${t}$ dianggap implisit, sedangkan ketergantungan terhadap ${\tau}$ dianggap eksplisit.
+Ketika ${\tau = 0}$ maka nilai dari autokorelasi ${g_1(\tau)}$ sama dengan 1 dan akan
+berkurang hingga 0 untuk ${\tau}$ yang lebih besar ketika medan elektromagnetik tidak
+berkorelasi. Ketika persamaan diatas dihubungkan dengan intensitas cahaya didapatkan
+persamaan orde kedua temporal fungsi korelasi atau bisa disebut juga \textit{intensity
+correlation function} yang dapat ditulis:
+
+\begin{equation}
+    g_2 (\tau) = \frac{\langle I(t) I(t+\tau)\rangle}{\langle I(t)\rangle^2}
+\end{equation}
+
+Jika pada penurunan persamaan, nilai dari ${I(t) = E(t)* E(t)}$, maka ${g_2(\tau)}$ menjadi:
+\begin{equation}
+    g_2 (\tau) = \frac{1}{\langle I(t)\rangle^2} \langle \Sigma E(t)* E(t) \cdot \Sigma E(t+\tau)* E(t+\tau) \rangle
+\end{equation}
+
+Karena partikel bergerak menyebar, maka terdapat nilai variabel hamburan sendiri sehingga
+nilai dari ${g_2(\tau)}$ adalah:
+
+\begin{equation}
+    g_2 (\tau) = \frac{1}{\langle I(t)\rangle^2} \lceil \langle I(t)^2 \rangle + \langle I(t)^2 \rangle \cdot |g_1(\tau)|^2
+\end{equation}
+
+maka:
+\begin{equation}
+    g_2(\tau) = 1+|g_1(\tau)|^2
+\end{equation}
 
 
 
