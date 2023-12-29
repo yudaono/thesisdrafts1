@@ -51,9 +51,8 @@ data sebagai berikut
 
 \begin{figure}[H]
   \centering
-  \includegraphics{Images/GainWLED.png}
+  \includegraphics[width=13cm]{Images/GainWLED2.png}
   \caption{Nilai Output OPT101 terhadap Resistor}
-  \vspace*{1.75pt}
   \caption*{dengan Variasi LED berbeda Intensitas Cahaya}
   \label{fig:gain_led}
 \end{figure}
@@ -89,17 +88,16 @@ laser.
   \begin{longtable}{p{7cm}p{7cm}}
     \includegraphics[width=8cm]{Images/RawData_Hijau_Data10-01.png}
     &
-    \includegraphics[width=8cm]{Images/RawData_Merah_Data9-01.png} \\
-    
+    \includegraphics[width=8cm]{Images/RawData_Merah_Data9-01.png}
+  \end{longtable}
+\end{figure}
+\begin{figure}[H]
+  \ContinuedFloat
+  \begin{longtable}{p{7cm}p{7cm}}
     \includegraphics[width=8cm]{Images/RawData_Hijau_Data100-01.png}
     &
     \includegraphics[width=8cm]{Images/RawData_Merah_Data99-01.png} \\
-   
-  \end{longtable}
-\end{figure}
-\begin{figure}
-  \ContinuedFloat
-  \begin{longtable}{p{7cm}p{7cm}}
+
     \includegraphics[width=8cm]{Images/RawData_Hijau_Data1000-01.png}
     \centering{Laser Hijau}
     &
@@ -138,23 +136,24 @@ menggunakan \textit{library Numpy} dari Python untuk mempermudah
 pengolahan data berbentuk matriks. Dari nilai autokorelasi
 terebut dapat di plotting menjadi gambar berikut:
 
-\begin{figure}[H]
+\begin{figure}
   \noindent
   \centering
   \begin{longtable}{p{7cm}p{7cm}}
     \includegraphics[width=8cm]{Images/AutoCor_Hijau_Data10-01.png}
     &
-    \includegraphics[width=8cm]{Images/AutoCor_Merah_Data9-01.png} \\
+    \includegraphics[width=8cm]{Images/AutoCor_Merah_Data9-01.png}
+   
+  \end{longtable}
+\end{figure}
+\begin{figure}[H]
+  \ContinuedFloat
+  \begin{longtable}{p{7cm}p{7cm}}
     
     \includegraphics[width=8cm]{Images/AutoCor_Hijau_Data100-01.png}
     &
     \includegraphics[width=8cm]{Images/AutoCor_Merah_Data99-01.png} \\
-   
-  \end{longtable}
-\end{figure}
-\begin{figure}
-  \ContinuedFloat
-  \begin{longtable}{p{7cm}p{7cm}}
+
     \includegraphics[width=8cm]{Images/AutoCor_Hijau_Data1000-01.png}
     \centering{Laser Hijau}
     &
