@@ -163,6 +163,38 @@ terebut dapat di plotting menjadi gambar berikut:
   \caption{Sampel Data Autokorelasi terhadap Tau}
 \end{figure}
 
+Sebagai contoh, pada partikel berukuran ${839nm}$ didapatkan data 
+berupa nilai ${c}$ yang didapatkan dari hasil fitting kurva
+autokorelasi bernilai ${345,176}$. Berdasarkan data pada saat
+pengukuran seperti nilai ${\lambda = 650e^{-9}}$, suhu ruangan
+${T = 298 K}$, viskositas larutan ${\eta = 0,001 Pa.s}$,
+dan indeks refraktif ${n_s = 1,33}$, maka nilai ${q}$ pada
+persamaan~\ref{eq:q} dapat dihitunga sebagai berikut
+\begin{flalign*}
+  q &= \frac{4\pi n_s}{\lambda} \sin (\theta / 2)&& \\
+  q &= \frac{4\pi 1,33}{650e^{-9}} \sin (90\degree / 2)&& \\
+  q &= 18181644,023&&
+\end{flalign*}
+\noindent
+Nilai ${q}$ tersebut akan digunakan untuk mencari jari-jari
+ukurang partikel berdasarkan persamaan~\ref{eq:c} sehingga
+persamaannya menjadi:
+\begin{flalign*}
+  c &= 2 D_{\tau} q^2&&\\
+  c &= 2 \left(\frac{k_b T}{6 \pi R_h \eta} \right) q^2&&
+\end{flalign*}
+\begin{flalign*}
+  R_h &= 2 \left(\frac{k_b T}{6 \pi c \eta} \right) q^2&&\\
+  R_h &= 2 \left(\frac{1,380649e^{-23} 298}{6 \centerdot \pi \centerdot 345,176 \times 0,001} \right) \centerdot \left(18181644,023\right)^2&&\\
+  R_h &= 418,0744e^{-9} m
+\end{flalign*}
+\noindent
+Setelah didapatkan jari-jari partikel, maka Diameter dari partikel
+akan bernilai dua kalinya jari-jari, sehingga
+\begin{flalign*}
+  size = 2 \times 418,0744e^{-9}m \times 10^{-9} = 836,1488 nm&&
+\end{flalign*}
+
 
 \subsection{Hasil Karakterisasi Sampel pada PSA}
 \begin{figure}[H]
@@ -172,19 +204,22 @@ terebut dapat di plotting menjadi gambar berikut:
   \label{fig:psa}
 \end{figure}
 Pada pengukuran PSA, data yang didapat berupa ${Z-Average}$ berkisar
-di ${251 nm}$ dengan PI 2,555. Data tersebut mempengaruhi pengukuran
-dari PSA karena Polidyspersity Index yang tinggi mengurangi tingkat
-akurasi pada pengukuran. Apabila dibandingkan dengan kedua rangkaian
-DLS yang diuji, distribusi data diameter partikel yang didapat
-memiliki range lebih sempit. Lebar range tersebut juga mempengaruhi
-tingkat akurasi dari pengukuran pada rangkaian yang digunakan.
+di ${251 nm}$ dengan PI (\textit{Polidyspersity Index}) 2,555. Data
+tersebut mempengaruhi pengukuran dari PSA karena
+\textit{Polidyspersity Index} yang tinggi mengurangi tingkat
+akurasi pada pengukuran. Nilai yang cukup tinggi tersebut juga
+memperlebar range distribusi ukurang partikel yang terukur pada
+alat yaitu di antara ${200nm}$ hingga ${590nm}$. Apabila
+dibandingkan dengan rangkaian DLS sederhana yang diuji, distribusi
+data diameter partikel yang didapat pada karakterisasi PSA memiliki
+range lebih sempit.
 
 
 \subsection{Distribusi Data Ukuran Partikel}
 \begin{figure}[H]
   \centering
   \includegraphics[width=13cm]{Images/Distribusi 10000x.png}
-  \caption{Distribusi 20000 Ukuran Partikel}
+  \caption{Distribusi 20.000 Ukuran Partikel}
   \label{fig:dist10000x}
 \end{figure}
 

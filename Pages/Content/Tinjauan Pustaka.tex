@@ -13,14 +13,14 @@ bentuk intensitas terhadap waktu yang dimana informasi ini dapat dimanfaatkan un
 molekular, komposisi oligomeric, dan jari-jari dari makromolekul tersebut. Selain itu, dari data
 tersebut dapat digunakan sebagai acuan untun mengukur konformasi kasar dari sebuah protein. Oleh
 karena itu metode \textit{Light Scattering} ini dapat juga digunakan untuk menganalisa struktur dari
-sebuah virus\cite{Stetefeld2016}
+sebuah virus\cite{Stetefeld2016}.
 
 Sistem dari penghamburan cahaya tidak selalu berbasis molekul. Pada dasarnya sendiri pada saat
 sebuah objek terkena cahaya, objek tersebut dapat memantulkan atau membelokan arah cahaya tersebut.
 Oleh karena itu dalam \textit{Light Scattering}, cahaya dari laser tidak akan terlihat oleh mata
 apabila tidak terpantulkan oleh sebuah partikel lainnya. Hal tersebutlah yang menyebabkan mengapa
 langit berwarna biru. Cahaya laser yang terlihat oleh mata kita merupakan hasil dari hamburan
-partikel di sekitar arah gerak cahaya tersebut.
+partikel di sekitar arah gerak cahaya tersebut\cite{Zidan2022}.
 
 
 
@@ -50,6 +50,7 @@ menghubungkan gerak Brownian dengan ukuran dari partikel\cite{Anindya2018}. Pers
 \textit{Stokes-Einstein} dapat dituliskan sebagai berikut.
 \begin{equation}
     D_{\tau} = \frac{k_b T}{6 \pi \eta R}
+    \label{eq:stokeseinstein}
 \end{equation}
 
 Dalam hamburan cahaya, ketika laser mengenai molekul, cahaya yang terhamburkan akan menyebar ke
@@ -58,7 +59,7 @@ yang terdeteksi akan mengalami pelebaran Doppler karena pergerakan fluktuatif da
 Cahaya yang tersebar akan menghasilkan fase yang saling meniadakan atau membangun sinyal yang dapat
 dideteksi. Akibat adanya fluktuasi tersebut, nilai yang didapatkan dari detektor akan berubah-ubah
 seiring waktu. Oleh karena itu pada DLS pengukuran berdasarkan dari nilai distribusi dari gerak
-Brownian\cite{Falke2019,Pavan2022}. 
+Brownian\cite{Falke2019,PavanM.V.Raja2022}. 
 
 Pada umumnya perubahan intensitas terhadap waktu akan memperngaruhi akurasi dari pengukuran DLS,
 oleh karena itu terdapat \textit{Auto Corelation Function} yang menghitung rata-rata nilai
@@ -96,8 +97,9 @@ correlation function} yang dapat ditulis:
 % \noindent
 % maka:
 
-Fungsi dari ${g_1(\tau) dan g_2(\tau)}$ dapat dihubungkan dengan \textit{Siegert Relation}
-berdasarkan aproksimasi hamburan bersifat homodyne(Fotodetektor hanya mendeteksi cahaya
+Fungsi dari ${g_1(\tau)}$ dan ${g_2(\tau)}$ dapat dihubungkan dengan \textit{Siegert Relation}
+\cite{Siegert1943}
+berdasarkan aproksimasi hamburan bersifat homodyne (Fotodetektor hanya mendeteksi cahaya
 yang tersebar) \cite{Stetefeld2016}. Berdasarkan kondisi tersebut, maka persamaan
 ${g_2(\tau)}$ menjadi:
 \begin{equation}
@@ -116,7 +118,7 @@ eksponensial bergantung pada konstanta peluruhan ${\Gamma}$ untuk molekul pada g
 \noindent
 Maka persamaan~\ref{eq:g1tau} menjadi
 \begin{equation}
-    g_2(\tau) = B + \beta g_1(\tau)^{-2\Gamma \tau}
+    g_2(\tau) = B + \beta e^{-2\Gamma \tau}
 \end{equation}
 
 Konstanta peluruhan pada persamaan~\ref{eq:g1tau} berhubungan langsung pada koefisien difusi
@@ -129,12 +131,32 @@ makromolekul (${D_{\tau}}$) yang dituliskan dalam persamaan.
 Pada persamaan~\ref{eq:difusimakro} \textit{Bragg Wave Vector} (${q}$) akan proporsional pada
 medium hamburan (${n}$).
 \begin{equation}
-    q = \frac{4\pi \eta}{\lambda} \sin (\theta / 2)
+    q = \frac{4\pi n_s}{\lambda} \sin (\theta / 2)
+    \label{eq:q}
 \end{equation}
 \noindent
-dimana ${\lambda}$ merupakan panjang gelombang dari cahaya dan ${\theta}$ adalah sudut dimana
-detektor diletakan.
+dimana ${\lambda}$ merupakan panjang gelombang dari cahaya, ${n_s}$ merupakan indeks refraktif
+pada panjang gelombang dan ${\theta}$ adalah sudut dimana
+detektor diletakan. Apabila ${-2 \Gamma}$ dapat disimbolkan dengan ${c}$ sebagai representatif
+dar fitting pada persamaan kurva, maka:
+\begin{equation}
+    c = 2 D_{\tau} q^2
+    \label{eq:c}
+\end{equation}
+\begin{equation}
+    c = 2 D_{\tau} \left( \frac{4\pi n_s}{\lambda} \sin \left( \frac{\theta}{2}\right) \right)^2
+    \label{eq:cwithq}
+\end{equation}
 
+Ketika persamaan~\ref{eq:cwithq} dihubungkan dengan persamaan ~\ref{eq:stokeseinstein},
+nilai dari jari jari hidrodinamis dapat ditemukan sehingga:
+\begin{equation*}
+    c = 2 \left(\frac{k_b T}{6 \pi R_h \eta} \right) \left( \frac{4\pi n_s}{\lambda} \sin \left( \frac{\theta}{2}\right) \right)^2
+\end{equation*}
+\begin{equation}
+    R_h = 2 \left(\frac{k_b T}{6 \pi c \eta} \right) \left( \frac{4\pi n_s}{\lambda} \sin \left( \frac{\theta}{2}\right) \right)^2
+    \label{eq:rh}
+\end{equation}
 
 
 
@@ -156,7 +178,7 @@ Fotodioda adalah suatu jenis dioda yang resistansinya akan berubah-ubah apabila 
 cahaya. Resistansi dari fotodioda dipengaruhi oleh intensitas cahaya yang diterimanya, semakin
 banyak cahaya yang diterima maka semakin kecil resistansi dari fotodioda dan begitupula sebaliknya
 jika semakin sedikit intensitas cahaya yang diterima oleh sensor fotodioda maka semakin besar nilai
-resistansinya\cite{Setyaningsih2017,Arta2020}.
+resistansinya\cite{Setyaningsih2017,DendyArta2020}.
 
 \begin{figure}[H]
     \centering

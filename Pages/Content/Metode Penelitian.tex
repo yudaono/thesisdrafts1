@@ -35,9 +35,10 @@ berikut.
     apakah nilai keluaran sesuai dengan referensi. Nilai keluaran akan diproses dengan ADC
     \textit{(Analog Digital Converter)} dari sinyal pada sensor dan \textit{Transimpedance Amplifier}
     yang terdapat pada Arduino.
-    \item Pengujian dengan sampel dilakukan bersamaan dengan pengujian pada PSA pada ruangan
-    dan suhu yang sama. Sampel yang digunakan merupakan ${SiO_2}$ yang telah di ultrasonik
-    selama 30 menit.
+    \item Pengujian dengan sampel dilakukan bersamaan dengan pengujian pada PSA dari Horiba
+    tipe SZ-100V2 pada ruangan
+    dan suhu yang sama. Sampel yang digunakan merupakan ${SiO_2}$\cite{MadeJoni2020}
+    berkarakteristik silika amorfus yang telah di ultrasonik selama 30 menit.
     \item Analisa Hasil Pengujian. Setelah didapatkan data dari kedua hasil pengujian, maka dilakukan
     analisa.
     \item Penulisan Laporan dilakukan sebagai bukti hasil yang didapat setelah melakukan penelitian.
@@ -65,6 +66,20 @@ sebagai ADC dan diolah kembali pada program Python hingga didapatkan hasil pengu
     \caption{Desain Rangkaian Instrumen DLS dua laser}
     \label{fig:schemacirc}
 \end{figure}
+\noindent
+\textit{Transimpedance Amplifier} yang terdapat pada OPT101 dapat digambarkan dengan
+diagram berikut yang bersumber dari datasheet \textit{Texas Instruments}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{Images/Schema OPT101.png}
+    \caption{Desain Rangkaian OPT101 (\textit{Texas Instruments})}
+    \label{fig:schemaopt101}
+\end{figure}
+\noindent
+Resistor Eksternal ${\left(R_{EXT} \right)}$ pada pengukuran partikel memiliki nilai
+${10M \Omega}$ tanpa menggunakan Kapasitor Eksternal ${\left(C_{EXT}\right)}$. Namun untuk
+memastikan pembesaran pada Amplifier sesuai, maka akan dilakukan
+pengujian blok dengan variasi nilai Resistor Eksternal lainya.
 
 
 
@@ -108,6 +123,11 @@ yang membatasi kuvet dengan laser. Hasil rancangan alat tersebut dapat dilihat p
     \label{fig:prot}
 \end{figure}
 
+\noindent
+Untuk menggunakan laser secara bergantian, setiap laser dihubungkan dengan switch
+sehingga pada saat salah satu laser digunakan, laser lainnya dapat dimatikan untuk
+mengurangi cahaya lingkungan masuk ke sistem.
+
 
 
 \section{Desain Software}
@@ -148,15 +168,26 @@ diterima oleh laptop dapat digambarkan pada gambar ~\ref{fig:schemapy}
 Data yang diterima program Python berupa 800 nilai dari pembacaan sensor dalam waktu ${t}$
 didefinisikan sebagai \textit{Global Parameter}. Selain itu terdapat nilai Panjang gelombang
 Laser, Indeks Bias, Konstanta Boltzman, Suhu sampel, Viskositas Sampel, dan Sudut Hamburan.
-Nilai sensor yang dikirim melalui Serial akan diolah menggunakan Fungsi Autokorelasi dengan
-menggunakan \textit{numpy corelate}. Data hasil autokorelasi tersebut tersimpan dalam bentuk
+Nilai sensor yang dikirim melalui Serial akan diolah menggunakan Metode Kumulan Autokorelasi
+dengan menggunakan \textit{numpy corelate}. Dalam persamaan matematis, Fungsi Autokorelasi
+dapat dituliskan sebagai berikut:
+\begin{equation}
+    \hat{\gamma} = \frac{1}{n} \sum_{t=1}^{n-k}\left(y_t - \bar{y}\right)\left(y_{t+k} - \bar{y}\right)
+\end{equation}
+\noindent
+dengan aturan fungsi ini dijalankan hingga nilai ${k}$ dimana ${k}$ sama dengan ${n-1}$
+
+Data hasil autokorelasi tersebut tersimpan dalam bentuk
 \textit{array}, lalu di plotting sehingga dapat dilakukan fitting data untuk mencari nilai
-koefisien difusi. Kemudian perhitungan ukuran partikel dilakukan dengan persamaan 
-\textit{Stokes-Einstein} untuk mencari nilai jari-jari partikel berdasarkan koefisien difusi.
+${c}$ yang mengacu pada persamaan~\ref{eq:c}. Kemudian perhitungan ukuran partikel
+dilakukan dengan persamaan~\ref{eq:rh} untuk mencari nilai jari-jari partikel
+berdasarkan nilai ${c}$.
 
 
 \section{Pengambilan Data}
-Pengujian alat dilakukan dengan menggunakan sampel \textit{Silika Geothermal} (${SiO_2}$) yang
+Pengujian alat dilakukan dengan menggunakan sampel \textit{Silika Geothermal} (${SiO_2}$)
+\cite{MadeJoni2020} berkarakteristik silika amorfus yang dipanaskan dengan suhu rendah
+(${70\degree C - 90\degree C}$) yang
 telah di ultrasonik selama 30 menit agar distribusi ukuran partikel dalam pelarut homogen.
 Pengambilan data dari DLS sederhana dilakukan bersamaan dengan karakterisasi menggunakan PSA
 pada suhu ruangan (${20\degree C}$).
