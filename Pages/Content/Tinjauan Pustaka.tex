@@ -20,7 +20,32 @@ sebuah objek terkena cahaya, objek tersebut dapat memantulkan atau membelokan ar
 Oleh karena itu dalam \textit{Light Scattering}, cahaya dari laser tidak akan terlihat oleh mata
 apabila tidak terpantulkan oleh sebuah partikel lainnya. Hal tersebutlah yang menyebabkan mengapa
 langit berwarna biru. Cahaya laser yang terlihat oleh mata kita merupakan hasil dari hamburan
-partikel di sekitar arah gerak cahaya tersebut\cite{Zidan2022}.
+partikel di sekitar arah gerak cahaya tersebut yang biasa disebut dengan hamburan
+\textit{Rayleigh} untuk partikel dengan ukuran dibawah ${1/10}$ dari panjang gelombang cahaya
+dan hamburan \textit{Mie} untuk partikel dengan ukuran menyerupai atau lebih besar dari
+panjang gelombang cahayanya\cite{Zidan2022,Chew2019}.
+
+Rayleigh scattering sendiri merupakan penyebaran secara elastik dari radiasi elektromagnetik
+pada elektron setelah tereksitasi. Aplikasi yang seringkali memanfaatkan hamburan
+\textit{Rayleigh} seperti hamburan dari objek mesoskopik, baik dalam bentuk aerosol atau
+suspensi partikel koloid dengan ukuran mulai dari nanometer hingga mikrometer\cite{Piazza2005}.
+Secara matematis, hamburan \textit{Rayleigh} menghitung intensitas dari cahaya yang terhamburkan
+dengan persamaan:
+\begin{equation}
+    I = I_0 \frac{16 {\pi}^4 r^6}{\lambda^4 R^2} \left(1 + \cos \theta \right)
+    \label{eq:rayleigh}
+\end{equation}
+\noindent
+dimana ${I_0}$ merupakan Intensitas awal, ${r}$ adalah jari-jari partikel bulat, ${\lambda}$
+merupakan panjang gelombang cahaya, dan ${R}$ merupakan jarak antara partikel dengan
+titik observasi cahaya hamburan\cite{Thomas1991}.
+
+Hubungan dari panjang gelombang dengan ukuran partikel yang terdapat pada 
+persamaan~\ref{eq:rayleigh} menjelaskan jika jari-jari partikel tetap, sudut hamburan
+cahaya dan panjang gelombang akan sebanding ${\left(\lambda \approx r \cos \theta \right)}$.
+Begitupula pada panjang gelombang yang sama, jari-jari partikel akan sebanding dengan
+panjang gelombang cahaya dan berbanding terbalik dengan sudut hamburan cahaya 
+${\left(r \approx \frac{\lambda}{\cos \theta} \right)}$.
 
 
 
@@ -81,6 +106,7 @@ correlation function} yang dapat ditulis:
 
 \begin{equation}
     g_2 (\tau) = \frac{\langle I(t) I(t+\tau)\rangle}{\langle I(t)\rangle^2}
+    \label{eq:g_2}
 \end{equation}
 % \noindent
 % Jika pada penurunan persamaan, nilai dari ${I(t) = E(t) E(t)}$, maka ${g_2(\tau)}$ menjadi:
@@ -104,6 +130,7 @@ yang tersebar) \cite{Stetefeld2016}. Berdasarkan kondisi tersebut, maka persamaa
 ${g_2(\tau)}$ menjadi:
 \begin{equation}
     g_2(\tau) = B + \beta|g_1(\tau)|^2
+    \label{eq:g_2fin}
 \end{equation}
 \noindent
 dimana ${B}$ merupakan baseline (${\thicksim}$1) dan ${\beta}$ adalah konstanta eksperimental empiris.
@@ -138,23 +165,19 @@ medium hamburan (${n}$).
 dimana ${\lambda}$ merupakan panjang gelombang dari cahaya, ${n_s}$ merupakan indeks refraktif
 pada panjang gelombang dan ${\theta}$ adalah sudut dimana
 detektor diletakan. Apabila ${-2 \Gamma}$ dapat disimbolkan dengan ${c}$ sebagai representatif
-dar fitting pada persamaan kurva, maka:
+dari fitting pada persamaan kurva, maka:
 \begin{equation}
     c = 2 D_{\tau} q^2
     \label{eq:c}
 \end{equation}
-\begin{equation}
-    c = 2 D_{\tau} \left( \frac{4\pi n_s}{\lambda} \sin \left( \frac{\theta}{2}\right) \right)^2
-    \label{eq:cwithq}
-\end{equation}
 
-Ketika persamaan~\ref{eq:cwithq} dihubungkan dengan persamaan ~\ref{eq:stokeseinstein},
+Ketika persamaan~\ref{eq:c} dihubungkan dengan persamaan ~\ref{eq:stokeseinstein},
 nilai dari jari jari hidrodinamis dapat ditemukan sehingga:
 \begin{equation*}
-    c = 2 \left(\frac{k_b T}{6 \pi R_h \eta} \right) \left( \frac{4\pi n_s}{\lambda} \sin \left( \frac{\theta}{2}\right) \right)^2
+    c = 2 \left(\frac{k_b T}{6 \pi R_h \eta} \right) q^2
 \end{equation*}
 \begin{equation}
-    R_h = 2 \left(\frac{k_b T}{6 \pi c \eta} \right) \left( \frac{4\pi n_s}{\lambda} \sin \left( \frac{\theta}{2}\right) \right)^2
+    R_h = 2 \left(\frac{k_b T}{6 \pi c \eta} \right) q^2
     \label{eq:rh}
 \end{equation}
 

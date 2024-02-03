@@ -172,16 +172,20 @@ Nilai sensor yang dikirim melalui Serial akan diolah menggunakan Metode Kumulan 
 dengan menggunakan \textit{numpy corelate}. Dalam persamaan matematis, Fungsi Autokorelasi
 dapat dituliskan sebagai berikut:
 \begin{equation}
-    \hat{\gamma} = \frac{1}{n} \sum_{t=1}^{n-k}\left(y_t - \bar{y}\right)\left(y_{t+k} - \bar{y}\right)
+    \hat{y} = \frac{1}{n} \sum_{t=1}^{n-k}\left(y_t - \bar{y}\right)\left(y_{t+k} - \bar{y}\right)
 \end{equation}
 \noindent
-dengan aturan fungsi ini dijalankan hingga nilai ${k}$ dimana ${k}$ sama dengan ${n-1}$
+dengan aturan fungsi ini dijalankan hingga nilai ${k}$ dimana ${k}$ sama dengan ${n-1}$.
+Hasil dari perhitungan tersebut akan diinputkan ke persamaan~\ref{eq:g_2}
 
 Data hasil autokorelasi tersebut tersimpan dalam bentuk
 \textit{array}, lalu di plotting sehingga dapat dilakukan fitting data untuk mencari nilai
-${c}$ yang mengacu pada persamaan~\ref{eq:c}. Kemudian perhitungan ukuran partikel
-dilakukan dengan persamaan~\ref{eq:rh} untuk mencari nilai jari-jari partikel
-berdasarkan nilai ${c}$.
+${g_2 \left(\tau \right)}$ yang mengacu pada persamaan~\ref{eq:g_2fin}. Dengan didapatkannya
+nilai ${B}$ dan ${\beta}$ maka nilai pada persamaan~\ref{eq:g1tau} dapat diketahui. Kemudian
+didapatkan nilai ${\Gamma}$ sehingga persamaan~\ref{eq:q} dapat dieksekusi dan nilai dari
+${D_{\tau}}$ dapat dicari dengan menggunakan persamaan~\ref{eq:difusimakro}. Persamaan
+~\ref{eq:stokeseinstein} digunakan untuk mendapatkan nilai jari-jari parkikel ${R_h}$
+sehingga didapatkan ukuran dari partikel yang terdeteksi oleh sensor.
 
 
 \section{Pengambilan Data}
